@@ -18,10 +18,10 @@ export const Modal = ({onModalClose, largeImg}) => {
     return () => {
 
       document.removeEventListener("keydown", handleEscKey, false);
-      
+
     };
 
-  }, []);
+  }, [onModalClose]);
 
 
 
