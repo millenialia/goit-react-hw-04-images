@@ -1,3 +1,4 @@
+import PropTypes, { object } from "prop-types";
 import css from "./ImageGalleryItem.module.css"
 
 export const ImageGalleryItem = ({ pictures, onImgClick }) => {
@@ -11,4 +12,10 @@ export const ImageGalleryItem = ({ pictures, onImgClick }) => {
       })
     )
 
+}
+
+
+ImageGalleryItem.propTypes = {
+  onImgClick: PropTypes.func.isRequired,
+  pictures: PropTypes.arrayOf(object).isRequired,
 }

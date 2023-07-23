@@ -1,18 +1,12 @@
-import { Component } from 'react'
+import PropTypes, { object } from "prop-types";
 import css  from "./Searchbar.module.css";
 
-export class Searchbar extends Component{
+export const Searchbar = ({onSearch}) => {
 
-
-  onSearch = this.props.onSearch
-  handleChange = this.props.handleChange
-
-  render() {
     return (
       <header className= {css.searchbar}>
-        <form className={css.form} onSubmit={this.onSearch}>
+        <form className={css.form} onSubmit={onSearch}>
           <button type="submit" className= {css.button} >
-            {/* <span className={css.buttonLabel}>Search</span> */}
             &#128269;
           </button>
 
@@ -27,5 +21,9 @@ export class Searchbar extends Component{
         </form>
       </header>
     )
-  }
+
+}
+
+Searchbar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
 }
