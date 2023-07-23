@@ -6,18 +6,24 @@ import css from "./Modal.module.css"
 export const Modal = ({onModalClose, largeImg}) => {
 
   useEffect(() => {
-    document.addEventListener("keydown", handleEscKey, false);
 
-    return () => {
-      document.removeEventListener("keydown", handleEscKey, false);
-    };
-  }, []);
-
-  const handleEscKey = (event) => {
+    const handleEscKey = (event) => {
     if (event.key === "Escape") {
       onModalClose();
     }
-  };
+    };
+
+    document.addEventListener("keydown", handleEscKey, false);
+
+    return () => {
+
+      document.removeEventListener("keydown", handleEscKey, false);
+      
+    };
+
+  }, []);
+
+
 
     return (
     <div className={css.overlay} onClick={onModalClose}>

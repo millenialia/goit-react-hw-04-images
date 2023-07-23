@@ -16,7 +16,7 @@ export const App = () => {
   const [showMoreButton, setShowMoreButton] = useState(false)
   const [pageNum, setPageNum] = useState(1)
   const [largeImg, setLargeImg] = useState("")
-  const [error, setError] = useState(null)
+
 
 
 
@@ -62,7 +62,7 @@ export const App = () => {
           setPictures(prevState => pageNum === 1 ? pictures : [...prevState, ...pictures])
         }
        } catch (error) {
-        setError({ error })
+        console.log(error);
       } finally {
         setIsLoading(false)
       }
